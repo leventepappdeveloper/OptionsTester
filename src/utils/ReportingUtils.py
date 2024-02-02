@@ -8,10 +8,11 @@ class ReportingUtils:
     # Generates csv file
     @staticmethod
     def generate_trade_log(backtest_data: dict) -> pandas.DataFrame:
-        df: pandas.DataFrame = pandas.DataFrame(columns=backtest_data['column_names'])
-        df = pandas.concat([df, pandas.DataFrame(backtest_data['trade_history'])])
+        df: pandas.DataFrame = pandas.DataFrame.from_dict(data=backtest_data['trade_history'],
+                                                          orient='columns')
         trade_log: pandas.DataFrame = df.sort_values('entry_date')
         trade_log.sort_index()
+        print(trade_log)
         return trade_log
 
     # Generates pdf file

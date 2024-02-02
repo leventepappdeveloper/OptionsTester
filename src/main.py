@@ -19,7 +19,7 @@ if __name__ == '__main__':
     )
 
     k = ReportingUtils.generate_trade_log(backtest_data)
-    report = ReportingUtils.generate_performance_report(backtest_data, k)
-    ReportingUtils.create_performance_report(backtest_data, k, report)
+    #report = ReportingUtils.generate_performance_report(backtest_data, k)
+    #ReportingUtils.create_performance_report(backtest_data, k, report)
 
 
